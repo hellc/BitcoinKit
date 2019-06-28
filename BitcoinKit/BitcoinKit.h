@@ -23,7 +23,5 @@
 //  THE SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
-
-FOUNDATION_EXPORT double BitcoinKitVersionNumber;
-FOUNDATION_EXPORT const unsigned char BitcoinKitVersionString[];
+double BitcoinKitVersionNumber;
+const unsigned char BitcoinKitVersionString[];
