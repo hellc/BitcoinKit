@@ -206,6 +206,7 @@
 		6E20AED72112D417008A9810 /* MurmurHashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E20AED62112D417008A9810 /* MurmurHashTests.swift */; };
 		6E797C452116C8A5003BEDFD /* OpCodeFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E797C442116C8A5003BEDFD /* OpCodeFactoryTests.swift */; };
 		6EE789DB2112C1E500EAB620 /* CryptoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE789DA2112C1E500EAB620 /* CryptoTests.swift */; };
+		CA990B7E22CCF4E800E42C58 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA990B7D22CCF4E400E42C58 /* libcrypto.a */; };
 		CACE1BC922CCD7640038D8EE /* secp256k1 in Frameworks */ = {isa = PBXBuildFile; productRef = CACE1BC822CCD7640038D8EE /* secp256k1 */; };
 		CF432AF220F0CF9100AD4020 /* Base58Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF432AF120F0CF9100AD4020 /* Base58Tests.swift */; };
 		CF432AF420F0DFAC00AD4020 /* Bech32Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF432AF320F0DFAC00AD4020 /* Bech32Tests.swift */; };
@@ -434,6 +435,7 @@
 		6E20AED62112D417008A9810 /* MurmurHashTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurmurHashTests.swift; sourceTree = "<group>"; };
 		6E797C442116C8A5003BEDFD /* OpCodeFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpCodeFactoryTests.swift; sourceTree = "<group>"; };
 		6EE789DA2112C1E500EAB620 /* CryptoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTests.swift; sourceTree = "<group>"; };
+		CA990B7D22CCF4E400E42C58 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = Libs/openssl/lib/libcrypto.a; sourceTree = "<group>"; };
 		CF432AF120F0CF9100AD4020 /* Base58Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base58Tests.swift; sourceTree = "<group>"; };
 		CF432AF320F0DFAC00AD4020 /* Bech32Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bech32Tests.swift; sourceTree = "<group>"; };
 		CF432AF520F0ED4500AD4020 /* AddressTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTests.swift; sourceTree = "<group>"; };
@@ -451,6 +453,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA990B7E22CCF4E800E42C58 /* libcrypto.a in Frameworks */,
 				CACE1BC922CCD7640038D8EE /* secp256k1 in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -884,6 +887,7 @@
 		CACE1BCD22CCD7EF0038D8EE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CA990B7D22CCF4E400E42C58 /* libcrypto.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1392,7 +1396,10 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/Libs/openssl/lib";
+				LIBRARY_SEARCH_PATHS = (
+					"$(SRCROOT)/Libs/openssl/lib",
+					"$(PROJECT_DIR)/Libs/openssl/lib",
+				);
 				MODULEMAP_FILE = "$(SRCROOT)/BitcoinKit/BitcoinKit.modulemap";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_SWIFT_FLAGS = "-D BitcoinKitXcode";
@@ -1428,7 +1435,10 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/Libs/openssl/lib";
+				LIBRARY_SEARCH_PATHS = (
+					"$(SRCROOT)/Libs/openssl/lib",
+					"$(PROJECT_DIR)/Libs/openssl/lib",
+				);
 				MODULEMAP_FILE = "$(SRCROOT)/BitcoinKit/BitcoinKit.modulemap";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_SWIFT_FLAGS = "-D BitcoinKitXcode";

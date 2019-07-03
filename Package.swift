@@ -17,7 +17,7 @@ let package = Package(
         ),
         .target(
             name: "BitcoinKitPrivate",
-            dependencies: ["secp256k1"]
+            dependencies: ["secp256k1", "libcrypto"]
         ),
         .testTarget(
             name: "BitcoinKitTests",
