@@ -207,7 +207,6 @@
 		6E797C452116C8A5003BEDFD /* OpCodeFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E797C442116C8A5003BEDFD /* OpCodeFactoryTests.swift */; };
 		6EE789DB2112C1E500EAB620 /* CryptoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE789DA2112C1E500EAB620 /* CryptoTests.swift */; };
 		CACE1BC922CCD7640038D8EE /* secp256k1 in Frameworks */ = {isa = PBXBuildFile; productRef = CACE1BC822CCD7640038D8EE /* secp256k1 */; };
-		CACE1BCC22CCD78C0038D8EE /* Random in Frameworks */ = {isa = PBXBuildFile; productRef = CACE1BCB22CCD78C0038D8EE /* Random */; };
 		CF432AF220F0CF9100AD4020 /* Base58Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF432AF120F0CF9100AD4020 /* Base58Tests.swift */; };
 		CF432AF420F0DFAC00AD4020 /* Bech32Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF432AF320F0DFAC00AD4020 /* Bech32Tests.swift */; };
 		CF432AF620F0ED4500AD4020 /* AddressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF432AF520F0ED4500AD4020 /* AddressTests.swift */; };
@@ -453,7 +452,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CACE1BC922CCD7640038D8EE /* secp256k1 in Frameworks */,
-				CACE1BCC22CCD78C0038D8EE /* Random in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -922,7 +920,6 @@
 			name = BitcoinKit;
 			packageProductDependencies = (
 				CACE1BC822CCD7640038D8EE /* secp256k1 */,
-				CACE1BCB22CCD78C0038D8EE /* Random */,
 			);
 			productName = BitcoinKit;
 			productReference = 147494C7201F9A29006D1CF8 /* BitcoinKit.framework */;
@@ -978,7 +975,6 @@
 			mainGroup = 147494BD201F9A29006D1CF8;
 			packageReferences = (
 				CACE1BC722CCD7640038D8EE /* XCRemoteSwiftPackageReference "secp256k1" */,
-				CACE1BCA22CCD78C0038D8EE /* XCRemoteSwiftPackageReference "random" */,
 			);
 			productRefGroup = 147494C8201F9A29006D1CF8 /* Products */;
 			projectDirPath = "";
@@ -1398,6 +1394,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/Libs/openssl/lib";
 				MODULEMAP_FILE = "$(SRCROOT)/BitcoinKit/BitcoinKit.modulemap";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_SWIFT_FLAGS = "-D BitcoinKitXcode";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bitcoinkit.BitcoinKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -1433,6 +1430,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/Libs/openssl/lib";
 				MODULEMAP_FILE = "$(SRCROOT)/BitcoinKit/BitcoinKit.modulemap";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_SWIFT_FLAGS = "-D BitcoinKitXcode";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bitcoinkit.BitcoinKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -1524,14 +1522,6 @@
 				minimumVersion = 0.1.0;
 			};
 		};
-		CACE1BCA22CCD78C0038D8EE /* XCRemoteSwiftPackageReference "random" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/vapor-community/random.git";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 1.2.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1539,11 +1529,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CACE1BC722CCD7640038D8EE /* XCRemoteSwiftPackageReference "secp256k1" */;
 			productName = secp256k1;
-		};
-		CACE1BCB22CCD78C0038D8EE /* Random */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CACE1BCA22CCD78C0038D8EE /* XCRemoteSwiftPackageReference "random" */;
-			productName = Random;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
